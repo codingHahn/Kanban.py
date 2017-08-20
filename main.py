@@ -1,5 +1,6 @@
 import web
 import hashlib
+import time
 from tinydb import TinyDB, Query, where
 
 db = TinyDB('db.json')
@@ -34,7 +35,7 @@ class addTask:
         f= self.form()
         if not f.validates():
             return render.register(f)
-        hash = hashlib.sha1(f.d.title.encode('utf-8') + f.d.description.encode('utf-8')).hexdigest()
+        hash = hashlib.sha1(f.d.title.encode('utf-8') + f.d.description.encode('utf-8') + f.d.assignee.encode('utf-8') + str(time.time()).encode('utf-8')).hexdigest()
         db.insert({'title':f.d.title, 'description':f.d.description, 'assignee':f.d.assignee, 'hash':hash, 'section':1})
         raise web.seeother('/')
 
