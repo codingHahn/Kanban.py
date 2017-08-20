@@ -31,22 +31,26 @@ $def with (section1, section2, section3)
         <span class="card-title"><h4 style="text-align: center; padding-top: 0.2em;">To-Do</h4></span>
       <div class="card-content">
         <p>
-        $for i in section1:
-          <div class="card horizontal">
-            <div class="card-stacked">
-              <div class="card-content">
-                  <p><h5>$i.get("title")</h5>
-                  $i.get("description")</p>
-              </div>
-              <div class="card-action">
-                  <a href="delete?hash=$i.get('hash')">Delete</a>
-                  <a href="move?hash=$i.get('hash')">Move</a>
-                  <div class="chip" style="float: right;">
-                    $i.get("assignee")
+            $if section1:
+                $for i in section1:
+                  <div class="card horizontal">
+                    <div class="card-stacked">
+                      <div class="card-content">
+                          <p><h5>$i.get("title")</h5>
+                          $i.get("description")</p>
+                      </div>
+                      <div class="card-action">
+                          <a href="delete?hash=$i.get('hash')">Delete</a>
+                          <a href="move?hash=$i.get('hash')">Move</a>
+                          <div class="chip" style="float: right;">
+                            $i.get("assignee")
+                          </div>
+                      </div>
+                    </div>
                   </div>
-              </div>
-            </div>
-          </div>
+            $else:
+                <hr />
+                <h5 style="text-align: center">Nothing here yet</h5>
         </p>
       </div>
     </div>
@@ -56,23 +60,27 @@ $def with (section1, section2, section3)
       <span class="card-title"><h4 style="text-align: center; padding-top: 0.2em;">Work in Progress</h4></span>
       <div class="card-content">
         <p>
-        $for i in section2:
-          <div class="card horizontal">
-            <div class="card-stacked">
-              <div class="card-content">
-                  <p><h5>$i.get("title")</h5>
-                  $i.get("description")</p>
-              </div>
-              <div class="card-action">
-                  <a href="delete?hash=$i.get('hash')">Delete</a>
-                  <a href="move?hash=$i.get('hash')">Move</a>
-                  <div class="chip" style="float: right;">
-                    $i.get("assignee")
+            $if section2:
+                $for i in section2:
+                  <div class="card horizontal">
+                    <div class="card-stacked">
+                      <div class="card-content">
+                          <p><h5>$i.get("title")</h5>
+                          $i.get("description")</p>
+                      </div>
+                      <div class="card-action">
+                          <a href="delete?hash=$i.get('hash')">Delete</a>
+                          <a href="move?hash=$i.get('hash')">Move</a>
+                          <div class="chip" style="float: right;">
+                            $i.get("assignee")
+                          </div>
+                      </div>
+                    </div>
                   </div>
-              </div>
-            </div>
-          </div>
-        </p>
+                </p>
+            $else:
+                <hr />
+                <h5 style="text-align: center">Nothing here yet</h5>
       </div>
     </div>
   </div>
@@ -81,22 +89,26 @@ $def with (section1, section2, section3)
       <span class="card-title"><h4 style="text-align: center; padding-top: 0.2em;">Done</h4></span>
       <div class="card-content">
         <p>
-        $for i in section3:
-          <div class="card horizontal">
-            <div class="card-stacked">
-              <div class="card-content">
-                  <p><h5>$i.get("title")</h5>
-                  $i.get("description")</p>
-              </div>
-              <div class="card-action">
-                  <a href="delete?hash=$i.get('hash')">Delete</a>
-                  <a href="move?hash=$i.get('hash')">Move</a>
-                  <div class="chip" style="float: right;">
-                    $i.get("assignee")
+            $if section3:
+                $for i in section3:
+                  <div class="card horizontal">
+                    <div class="card-stacked">
+                      <div class="card-content">
+                          <p><h5>$i.get("title")</h5>
+                          $i.get("description")</p>
+                      </div>
+                      <div class="card-action">
+                          <a href="delete?hash=$i.get('hash')">Delete</a>
+                          <a href="move?hash=$i.get('hash')">Move</a>
+                          <div class="chip" style="float: right;">
+                            $i.get("assignee")
+                          </div>
+                      </div>
+                    </div>
                   </div>
-              </div>
-            </div>
-          </div>
+            $else:
+                <hr />
+                <h5 style="text-align: center">Nothing here yet</h5>
         </p>
       </div>
     </div>
