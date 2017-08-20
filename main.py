@@ -40,11 +40,7 @@ class addTask:
 class deleteTask:
     def GET(self):
         url_args = web.input()
-        for i in db.all():
-                print("Hash given from URL: " + url_args.hash + " Hash produced: " + i.get('hash') + " are matching")
-                db.remove(where('hash') == url_args.hash)
-                raise web.seeother('/')
-        print("Has not found hash: " + url_args.hash)
+        db.remove(where('hash') == url_args.hash)
         raise web.seeother('/')
 
 class moveTask:
