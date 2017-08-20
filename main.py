@@ -11,6 +11,7 @@ urls = ("/", "index",
         "/move/*", "moveTask")
 
 app = web.application(urls, globals())
+# web.config.debug = True
 
 class index:
     def GET(self):
@@ -21,10 +22,10 @@ class index:
 
 class addTask:
     form = web.form.Form(
-            web.form.Textbox("title",  web.form.notnull, description="I need to..."),
-            web.form.Textarea("description", web.form.notnull, description="Description"),
-            web.form.Textbox("assignee", web.form.notnull, description="Person"),
-            web.form.Button("Add To-Do")
+            web.form.Textbox("title",  web.form.notnull, description="Title", class_="validate"),
+            web.form.Textarea("description", web.form.notnull, description="Description" , class_="materialize-textarea"),
+            web.form.Textbox("assignee", web.form.notnull, description="Assignee" , class_="validate"),
+            web.form.Button("Add To-Do", class_="btn waves-effect waves-light")
             )
     def GET(self):
         f = self.form()
