@@ -5,8 +5,8 @@ $def with(form)
         $for i in form.inputs:
         <div class="row">
             <div class="input-field col s12">
-                    $:i.render()
-                    <label for="$i.id">$i.description</label>
+                $:i.render()
+                <label for="$i.id">$i.description</label>
             </div>
         </div>
     </form>
