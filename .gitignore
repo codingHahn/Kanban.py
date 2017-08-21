@@ -102,3 +102,6 @@ ENV/
 
 # ignore db.json
 db.json
+
+# ignore vim swap files
+*.swp
