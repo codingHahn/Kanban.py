@@ -1,34 +1,4 @@
 $def with (section1, section2, section3)
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Kanban Material</title>
-  
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
-<!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
-            
-
-
-  
-</head>
-
-<body onload="startTime()">
-  <nav>
-      <div class="nav-wrapper blue darken-1">
-        <a href="#!" class="brand-logo center">Kanban</a>
-        <a href="#" class="brand-logo right" id="txt"></a>
-      </div>
-    </nav>
-
-
 <div class="row">
 
   <div class="col s4 column dropzone" id="dropzone1">
@@ -123,22 +93,3 @@ $def with (section1, section2, section3)
 </div>
 
  <a class="btn-floating btn-large waves-effect waves-light red" style="bottom: 45px; right: 24px; position: fixed;"href="add/"><i class="material-icons">add</i></a>
-<script>
-function startTime() {
-    var today = new Date();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    var s = today.getSeconds();
-    m = checkTime(m);
-    s = checkTime(s);
-    document.getElementById('txt').innerHTML =
-    h + ":" + m + ":" + s;
-    var t = setTimeout(startTime, 500);
-}
-function checkTime(i) {
-    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-    return i;
-}
-</script>  
-</body>
-</html>

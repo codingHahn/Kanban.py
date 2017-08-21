@@ -4,7 +4,7 @@ import time
 from tinydb import TinyDB, Query, where
 
 db = TinyDB('db.json')
-render = web.template.render('templates/')
+render = web.template.render('templates/', base='layout')
 
 urls = ("/", "index",
         "/add/", "addTask",
