@@ -67,7 +67,7 @@ class deleteTask:
 
 class moveTask:
     form = web.form.Form(
-            web.form.Dropdown('sectionSelect', [(1, 'Section 1'), (2, 'Section 2'), (3, 'Section 3')], description=None),
+            web.form.Dropdown('sectionSelect', [(1, 'TO-DO'), (2, 'WIP'), (3, 'Done')], description=None),
             web.form.Button('Move', class_="btn waves-effect waves-light")
             )
 
